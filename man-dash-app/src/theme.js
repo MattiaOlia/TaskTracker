@@ -34,8 +34,22 @@ const theme = createTheme({
         lineHeight: '2.5rem',
       },
     },
+    h3: {
+      margin:"0.3em 0",
+      fontWeight: 600,
+      fontSize: '1.5rem',
+      lineHeight: '1.7rem',
+      '@media (min-width:600px)': {
+        fontSize: '1.5rem',
+        lineHeight: '2rem',
+      },
+      '@media (min-width:960px)': {
+        fontSize: '1.5rem',
+        lineHeight: '2rem',
+      },
+    },
+
     body1: {
-      
       fontSize: '1rem',
       lineHeight: '1.5rem',
       '@media (min-width:600px)': {
