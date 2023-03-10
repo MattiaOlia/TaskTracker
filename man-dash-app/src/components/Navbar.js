@@ -18,9 +18,6 @@ import theme from '../theme';
 import {  ThemeProvider } from '@mui/material/styles';
 
 
-
-
-
 export default function Navbar() {
     const isSmallScreen = useMediaQuery('(max-width:600px)');
     const [anchorEl, setAnchorEl] = useState(null);
@@ -73,19 +70,18 @@ export default function Navbar() {
         return (
           <div>
           <ThemeProvider theme={theme}>
-            <Box sx={{ width: '100%', maxWidth: 100, bgcolor: '',border:"solid",borderRadius:"20px", position:"fixed", top:10,bottom:10,left:10 }}>
-            <List sx={{ bgcolor: 'white' }} disablePadding>
+            <Box sx={{ width: '100%', maxWidth: 100, bgcolor: `${theme.palette.secondary.main}`,borderRadius:"20px", position:"fixed", top:10,bottom:10,left:10 }}>
+            <List sx={{ bgcolor: `${theme.palette.secondary.main}` }} disablePadding>
             <ListItemButton
   sx={{
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     margin:"2em auto",
-    bgcolor: "white",
-    width: "5em",
-    height: "5em",
+    width: "4em",
+    height: "4em",
     borderRadius: "50%",
-    ':hover': { bgcolor: 'purple' }
+    ':hover': { bgcolor: `${theme.palette.primary.main}` }
   }}
 >
   <ListItemIcon
@@ -96,22 +92,43 @@ export default function Navbar() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      ':hover': { color: 'white' }
+     ':hover': { color:`${theme.palette.primary.contrastText}` }
     }}
   >
     <InboxIcon />
   </ListItemIcon>
 </ListItemButton>
 
-  <ListItemButton sx={{ ':hover': { bgcolor: 'purple' } }}>
-    <ListItemIcon sx={{ color: 'black', ':hover': { color: 'white' } }}>
-      <InboxIcon />
-    </ListItemIcon>
-  </ListItemButton>
+<ListItemButton
+  sx={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    margin:"2em auto",
+    width: "4em",
+    height: "4em",
+    borderRadius: "50%",
+    ':hover': { bgcolor: `${theme.palette.primary.main}` }
+  }}
+>
+  <ListItemIcon
+    sx={{
+      color: 'black',
+      width: '2.5em',
+      height: '2.5em',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+     ':hover': { color:`${theme.palette.primary.contrastText}` }
+    }}
+  >
+    <InboxIcon />
+  </ListItemIcon>
+</ListItemButton>
 </List>
               
             </Box>
             </ThemeProvider>
             </div>
-          );
-}}
+    
+)}}

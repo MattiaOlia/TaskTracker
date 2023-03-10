@@ -18,13 +18,13 @@ export function TodayTask() {
         <React.Fragment>
             <CssBaseline />
                 <Container>
-                     <Box p={4} sx={{ borderRadius:"20px", bgcolor: '#cfe8fc', display:"flex"}}>
+                     <Box p={4} sx={{ borderRadius:"20px", bgcolor: `${theme.palette.secondary.main}`, display:"flex"}}>
                      <Box sx={{display:"inline-block"}}>
                      <Typography variant='h2'>Today Task</Typography>
                      <Typography variant='body1'>Check your daily tasks and schedules</Typography>
                      <Button sx={{marginTop:"1.5em"}} variant="contained">Today’s schedule</Button></Box>
-                     {(isLargeScreen) && <Box sx={{margin:"-6.5em auto", display: 'inline-block', justifyContent: 'center', alignItems: 'center' }}>
-                          <img src={image1} alt="1 image" style={{ marginRight:"0",width: "290px" }}/></Box>}
+                     {(isLargeScreen) && <Box sx={{margin:"-5em auto", display: 'inline-block', justifyContent: 'center', alignItems: 'center' }}>
+                          <img src={image1} alt="1 image" style={{ marginRight:"0",width: "250px" }}/></Box>}
       </Box>
     
              </Container>

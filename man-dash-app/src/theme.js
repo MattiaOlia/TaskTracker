@@ -68,9 +68,10 @@ const theme = createTheme({
       contrastText: '#FCFBFF',
     },
     secondary: {
-      main: '#0316C2',
-      contrastText: '#FCFBFF',
+      main: '#FCFBFF',
+      contrastText: '#27104E',
     },
+    backgroundCol:'#EEF2FA'
   },
 });
 

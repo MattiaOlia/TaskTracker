@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import { Button, Divider, ListItem, Typography } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import image2 from "../components/img/Design community-pana 2.png"
-
+import BasicDateCalendar from './Calander';
 
 
 function UserAvatarOnline() {
@@ -54,8 +54,7 @@ function UserAvatarOnline() {
                 <Box sx={{ 
   width: isMediumScreen ? 'unset' : '100%',
   maxWidth: isMediumScreen ? 'unset' : 350,
-  bgcolor: isMediumScreen ? '#cfe8fc' : '',
-  border: isMediumScreen ? '' : 'solid',
+  bgcolor: `#F5F2FF`,
   borderRadius: '20px',
   position: isMediumScreen ? 'relative' : 'fixed',
   top: isMediumScreen ? 'unset' : 10,
@@ -69,7 +68,7 @@ function UserAvatarOnline() {
   marginLeft: isSmallScreen ? 13 : 0
 }}>
                  
-                  <Box width={"100%"} mt={2} sx={{display:"flex",flexAlign:"center", justifyContent:"center",alignItems:"center"}}  >
+                  <Box width={"100%"} sx={{display:"flex",flexAlign:"center", justifyContent:"center",alignItems:"center"}}  >
                     <Box  sx={{width:"fit-content", padding:"1em"}}  >
                     <StyledBadge 
                         overlap="circular"
@@ -83,22 +82,26 @@ function UserAvatarOnline() {
                     <p style={{margin:0}}>Front End</p>
                     </Box>
                     </Box>
-                    <Divider  sx={{width:"80%", border:"solid 1px grey",margin:"1em auto"}} />
+                    <Divider  sx={{width:"80%", border:"solid 1px grey", margin:"0 1em"}} />
                     <Box sx={{
                         display: 'flex',
                         flexDirection: 'column', 
                         alignItems:'center',
                         justifyItems:"center",
                         p: isMediumScreen ? "2em 4em" : "2em",
-                        pt: 0,
+                        
                       }}>
-                      <img style={{maxWidth:"250px"}} src={image2} alt="2 image" />
+                      
                       <Box >
                       <Typography variant={'h3'}>We are design agency work with you</Typography>
                       <Typography variant={"body1"}>Bringing well crafted design and scalable infrastructure</Typography>
                       <Button  sx={{marginTop:"0.7em"}}  variant='contained'>Hire us</Button>
                       </Box>
                     </Box>
+                    {!isMediumScreen &&
+                    <Box>
+                      <BasicDateCalendar />
+                      </Box>  }
                   </Box>
                   
               </Container>

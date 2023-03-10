@@ -1,13 +1,14 @@
 import {  ThemeProvider } from '@mui/material/styles';
-import { Typography } from '@mui/material';
+import {  Typography } from '@mui/material';
 import theme from './theme';
 import Navbar from './components/Navbar';
 import { TodayTask } from './components/TodayTask';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { Box } from '@mui/system';
 import UserAvatarOnline from './components/UserAvatarOnline';
-import Widget from './components/Widget';
 import WidgetsComp from './components/WidgetsComp';
+import { Box, palette } from '@mui/system';
+import Chart from './components/Chart';
+import CssBaseline from '@mui/material/CssBaseline';
 
 function App() {
   const isSmallScreen = useMediaQuery('(max-width:600px)');
@@ -21,27 +22,32 @@ function App() {
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <Box mt={2} sx={{ flex: '1 0 auto' }} />
             <TodayTask sx={{ flex: '0 1 auto' }} />
-            
           </Box>
           <WidgetsComp />
-          <Widget />
+          <Chart />
         </ThemeProvider>
       </div>
     );
   } else {
     return (
-      <div>
-        <div className="App">
+      <Box sx={{ backgroundColor: theme.palette.backgroundCol }}>
+        
           <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <div className="App">
             <Navbar />
             <UserAvatarOnline />
-            <Box ml={13} mt={(isMediumScreen) ? 13 : 2} mr={(isMediumScreen) ? 45 : 0} border={"solid"}>
+            <Box ml={13} pt={(isMediumScreen) ? 7 : 2} mr={(isMediumScreen) ? 45 : 0} >
               <TodayTask  /> 
+              <WidgetsComp />
+              <Chart />
+              
             </Box>
-            <Widget />
+          
+          </div>
           </ThemeProvider>
-        </div>
-      </div>
+        </Box>
+     
     );
   }
 }
