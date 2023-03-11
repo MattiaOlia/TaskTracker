@@ -1,8 +1,8 @@
 import {  ThemeProvider } from '@mui/material/styles';
 import {  Typography } from '@mui/material';
-import theme from './theme';
+import theme from "./theme"
 import Navbar from './components/Navbar';
-import { TodayTask } from './components/TodayTask';
+import TodayTask from "./components/TodayTask"
 import useMediaQuery from '@mui/material/useMediaQuery';
 import UserAvatarOnline from './components/UserAvatarOnline';
 import WidgetsComp from './components/WidgetsComp';
@@ -10,11 +10,14 @@ import { Box, palette } from '@mui/system';
 import Chart from './components/Chart';
 import CssBaseline from '@mui/material/CssBaseline';
 
+
+
 function App() {
   const isSmallScreen = useMediaQuery('(max-width:600px)');
   const isMediumScreen=useMediaQuery("(min-width:960px")
   if (isSmallScreen) {
     return (
+    
       <div className="App">
         <ThemeProvider theme={theme}>
           <Navbar />
@@ -26,12 +29,15 @@ function App() {
           <WidgetsComp />
           <Chart />
         </ThemeProvider>
+       
       </div>
+     
     );
   } else {
     return (
+      
+      
       <Box sx={{ backgroundColor: theme.palette.backgroundCol }}>
-        
           <ThemeProvider theme={theme}>
           <CssBaseline />
           <div className="App">
@@ -43,7 +49,7 @@ function App() {
               <Chart />
               
             </Box>
-          
+
           </div>
           </ThemeProvider>
         </Box>
@@ -55,3 +61,6 @@ function App() {
 export default App;
 
 //* https://www.figma.com/file/VYCGTQKB5SSUDYHNkq09HH/Task-Management-Dashboard-(Community)?node-id=0%3A1&t=ktkXrRFJjYaD7fSi-0
+
+
+

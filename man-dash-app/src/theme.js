@@ -73,6 +73,7 @@ const theme = createTheme({
     },
     backgroundCol:'#EEF2FA'
   },
+  
 });
 
 export default theme;

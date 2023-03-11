@@ -16,9 +16,12 @@ import MenuItem from '@mui/material/MenuItem';
 import {useState} from "react"
 import theme from '../theme';
 import {  ThemeProvider } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
+
 
 
 export default function Navbar() {
+ 
     const isSmallScreen = useMediaQuery('(max-width:600px)');
     const [anchorEl, setAnchorEl] = useState(null);
     const handleClick = (event) => {
@@ -31,12 +34,28 @@ export default function Navbar() {
 
     if (isSmallScreen) {
         return(
-        <div>
-            <ThemeProvider theme={theme}>
-            <Box sx={{ flexGrow: 1 }}>
-             <AppBar sx={{height:"70px", display:"flex",alignItems:"flex-start", justifyContent:"space-between",justifyItems:"center"}} position="static">
-             <Toolbar sx={{display:"flex", justifyContent:"space-between",height:"70px"}}>
-                <IconButton
+  
+           <div>
+  <ThemeProvider theme={theme}>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar
+        sx={{
+          height: '70px',
+          display: 'flex',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+          justifyItems: 'center',
+        }}
+        position="static"
+      >
+        <Toolbar
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            height: '70px',
+          }}
+        >
+          <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -44,26 +63,28 @@ export default function Navbar() {
             sx={{ m: 2 }}
             onClick={handleClick}
           >
-           <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                 keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-      >
-        <MenuItem onClick={handleClose}>Option 1</MenuItem>
-        <MenuItem onClick={handleClose}>Option 2</MenuItem>
-        <MenuItem onClick={handleClose}>Option 3</MenuItem>
-      </Menu>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <Link style={{color:"black", textDecoration:"none",}} to="/taskpage">
+                <MenuItem onClick={handleClose}>Option 1</MenuItem>
+              </Link>
+              <MenuItem onClick={handleClose}>Option 2</MenuItem>
+              <MenuItem onClick={handleClose}>Option 3</MenuItem>
+            </Menu>
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             LOGO
           </Typography>
-          </Toolbar>
+        </Toolbar>
       </AppBar>
     </Box>
-    </ThemeProvider>
+  </ThemeProvider>
 </div>
 )}
     else {
@@ -72,6 +93,7 @@ export default function Navbar() {
           <ThemeProvider theme={theme}>
             <Box sx={{ width: '100%', maxWidth: 100, bgcolor: `${theme.palette.secondary.main}`,borderRadius:"20px", position:"fixed", top:10,bottom:10,left:10 }}>
             <List sx={{ bgcolor: `${theme.palette.secondary.main}` }} disablePadding>
+            <Link to="/taskpage">
             <ListItemButton
   sx={{
     display: "flex",
@@ -98,7 +120,7 @@ export default function Navbar() {
     <InboxIcon />
   </ListItemIcon>
 </ListItemButton>
-
+</Link>
 <ListItemButton
   sx={{
     display: "flex",

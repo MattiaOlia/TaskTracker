@@ -9,7 +9,7 @@ import image1 from "../components/img/Time management-amico 1.png"
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 
-export function TodayTask() {
+export default function TodayTask() {
     
     const isLargeScreen=useMediaQuery("(min-width:1200px)")
     
