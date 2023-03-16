@@ -17,8 +17,8 @@ import {useState} from "react"
 import theme from '../theme';
 import {  ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
-
-
+import AddTaskIcon from '@mui/icons-material/AddTask';
+import PeopleIcon from '@mui/icons-material/People';
 
 export default function Navbar() {
  
@@ -71,7 +71,7 @@ export default function Navbar() {
               onClose={handleClose}
             >
               <Link style={{color:"black", textDecoration:"none",}} to="/taskpage">
-                <MenuItem onClick={handleClose}>Option 1</MenuItem>
+                <MenuItem onClick={handleClose}>Today Tasks</MenuItem>
               </Link>
               <MenuItem onClick={handleClose}>Option 2</MenuItem>
               <MenuItem onClick={handleClose}>Option 3</MenuItem>
@@ -117,7 +117,35 @@ export default function Navbar() {
      ':hover': { color:`${theme.palette.primary.contrastText}` }
     }}
   >
-    <InboxIcon />
+    <AddTaskIcon />
+  </ListItemIcon>
+</ListItemButton>
+</Link>
+<Link to="/memberpage">
+            <ListItemButton
+  sx={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    margin:"2em auto",
+    width: "4em",
+    height: "4em",
+    borderRadius: "50%",
+    ':hover': { bgcolor: `${theme.palette.primary.main}` }
+  }}
+>
+  <ListItemIcon
+    sx={{
+      color: 'black',
+      width: '2.5em',
+      height: '2.5em',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+     ':hover': { color:`${theme.palette.primary.contrastText}` }
+    }}
+  >
+    <PeopleIcon />
   </ListItemIcon>
 </ListItemButton>
 </Link>

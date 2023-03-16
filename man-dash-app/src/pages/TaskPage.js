@@ -10,12 +10,21 @@ import theme from '../theme';
 import { ThemeProvider } from '@emotion/react';
 import { Button, Typography } from '@mui/material';
 import { format } from 'date-fns';
+import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
+import CheckIcon from '@mui/icons-material/Check';
+import DeleteIcon from '@mui/icons-material/Delete'
+import {Divider} from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 function TaskPage() {
+  const isSmallScreen = useMediaQuery('(max-width:600px)');
+  const isMediumScreen=useMediaQuery("(min-width:960px")
   const [textFieldValue, setTextFieldValue] = React.useState("");
   const [textAreaValue, setTextAreaValue] = React.useState("");
   const [isSaveClicked, setIsSavedClicked] = React.useState(false);
-  const [taskList,setTaskList]=React.useState([""])
+  const [taskList, setTaskList] = React.useState([]);
+  const [selectedObj, setSelectedObj] = React.useState(true);
 
   const handleTextFieldChange = (event) => {
     setTextFieldValue(event.target.value);
@@ -27,31 +36,96 @@ function TaskPage() {
 
   const handleSave = () => {
     setIsSavedClicked(true);
-    setTaskList([...taskList,{time:currentDate,title:textFieldValue,text:textAreaValue}])
-    setTextFieldValue("")
-    setTextAreaValue("")
+    const currentDate = format(new Date(), "dd/MM/yyyy hh:mm");
+    const newTask = { time: currentDate, title: textFieldValue, text: textAreaValue, isChecked: false };
+    setTaskList([...taskList, newTask]);
+    setTextFieldValue("");
+    setTextAreaValue("");
   };
-  
-  const currentDate = format(new Date(), "dd/MM/yyyy hh:mm");
-  const taskListMap = taskList.map((obj)=>{
-    return(
-        <Box>
-             <Typography variant="h6">{obj.time}</Typography>
-              <Typography variant="h3">{obj.title}</Typography>
-            <Typography variant="body1">{obj.title}</Typography>
+
+  const handleCancel = () => {
+    setTextFieldValue("");
+    setTextAreaValue("");
+  }
+
+  const handleCheck = (index) => {
+    setSelectedObj(()=> !selectedObj)
+    const updatedTaskList = taskList.map((obj, i) => {
+      if (i === index) {
+        return { ...obj, isChecked: selectedObj };
+      }
+      return obj;
+    });
+    setTaskList(updatedTaskList);
+  };
+
+
+  const handleDelete = (index) => {
+    const updatedTaskList = taskList.filter((obj, i) => i !== index);
+    setTaskList(updatedTaskList);
+  };
+
+  const taskListMap = taskList.map((obj, index) => {
+    if (!obj) {
+      return null;
+    }
+    const textColor = obj.isChecked ? "gray" : "black";
+    return (
+      <Box key={index}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "0.5em",
+            color: textColor,
+          }}
+        >
+          <Box>
+            <Typography variant="body1" sx={{ fontStyle: "italic" }}>
+              {obj.time}
+            </Typography>
+            <Typography variant="h3">{obj.title}</Typography>
+            <Typography variant="body1">{obj.text}</Typography>
+          </Box>
+          <Box>
+            <Stack direction="row" spacing={1}>
+              <IconButton aria-label="checked" onClick={() => handleCheck(index)}>
+                <CheckIcon />
+              </IconButton>
+              <IconButton aria-label="delete" onClick={() => handleDelete(index)}>
+                <DeleteIcon />
+              </IconButton>
+            </Stack>
+          </Box>
         </Box>
-    )
-  })
+        <Divider sx={{ width: "100%", border: "solid 1px grey", margin: "1em auto" }} />
+      </Box>
+    );
+  });
+  
   return (
     <ThemeProvider theme={theme}>
       <React.Fragment>
         <Navbar />
         <CssBaseline />
-        <Container>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Box
+          display="flex"
+          flexDirection={isMediumScreen ? "row" : "coloumn"}
+          flexWrap={isMediumScreen ? "nowrap" : "wrap" } 
+          ml={isSmallScreen ? 0 : 15}
+          pt={isMediumScreen ? 7 : 2}
+          mr={isMediumScreen ? 2 : 0}
+        >
+          <Box
+            display="flex"
+            flexDirection="column"
+            flexGrow={1}
+            width={isMediumScreen ? "50%" : "100%"} 
+          >
             <TextField
               sx={{ margin: "2em" }}
-              label="TextField"
+              label="Title"
               variant="outlined"
               value={textFieldValue}
               onChange={handleTextFieldChange}
@@ -60,7 +134,7 @@ function TaskPage() {
               multiline
               rows={5}
               sx={{ margin: "0 2em" }}
-              label="TextArea"
+              label="Text"
               variant="outlined"
               value={textAreaValue}
               onChange={handleTextAreaChange}
@@ -76,24 +150,28 @@ function TaskPage() {
               <Button onClick={handleSave} variant="contained">
                 Save
               </Button>
-              <Button variant="contained">Cancel</Button>
+              <Button onClick={handleCancel} variant="contained">
+                Cancel
+              </Button>
             </Box>
           </Box>
-          {isSaveClicked && <Box
+          <Box
             p={4}
+            m={2}
             sx={{
-              mt: "2em",
+              mt: isMediumScreen ? "0" : "2em",
               borderRadius: "20px",
               bgcolor: `${theme.palette.secondary.main}`,
+              flexGrow: 1,
+              width: isMediumScreen ? "50%" : "inherit", 
             }}
           >
-              {taskListMap}
-          </Box>}
-        </Container>
+            {isSaveClicked && [taskListMap]}
+          </Box>
+        </Box>
       </React.Fragment>
     </ThemeProvider>
-  );
-}
+   );
+  }
 
-
-export default TaskPage;
+export default TaskPage 

@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import TaskPage from './pages/TaskPage';
+import MemberPage from './pages/MemberPage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,6 +13,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/taskpage" element={<TaskPage />} />
+        <Route path="/memberpage" element={<MemberPage />}/>
       </Routes>
     </Router>
   </React.StrictMode>,
