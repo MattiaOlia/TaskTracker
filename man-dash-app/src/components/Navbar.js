@@ -70,11 +70,16 @@ export default function Navbar() {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <Link style={{color:"black", textDecoration:"none",}} to="/taskpage">
+              <Link style={{color:"black", textDecoration:"none",}} to="/tasks">
                 <MenuItem onClick={handleClose}>Today Tasks</MenuItem>
               </Link>
-              <MenuItem onClick={handleClose}>Option 2</MenuItem>
-              <MenuItem onClick={handleClose}>Option 3</MenuItem>
+              <Link style={{color:"black", textDecoration:"none",}} to="/members">
+              <MenuItem onClick={handleClose}>Users</MenuItem>
+              </Link >
+              <Link style={{color:"black", textDecoration:"none",}} to="/calander">
+              <MenuItem onClick={handleClose}>Calander</MenuItem>
+              </Link>
+              
             </Menu>
             <MenuIcon />
           </IconButton>
@@ -93,7 +98,9 @@ export default function Navbar() {
           <ThemeProvider theme={theme}>
             <Box sx={{ width: '100%', maxWidth: 100, bgcolor: `${theme.palette.secondary.main}`,borderRadius:"20px", position:"fixed", top:10,bottom:10,left:10 }}>
             <List sx={{ bgcolor: `${theme.palette.secondary.main}` }} disablePadding>
-            <Link to="/taskpage">
+
+
+            <Link to="/tasks">
             <ListItemButton
   sx={{
     display: "flex",
@@ -121,7 +128,9 @@ export default function Navbar() {
   </ListItemIcon>
 </ListItemButton>
 </Link>
-<Link to="/memberpage">
+
+
+<Link to="/members">
             <ListItemButton
   sx={{
     display: "flex",
@@ -149,6 +158,9 @@ export default function Navbar() {
   </ListItemIcon>
 </ListItemButton>
 </Link>
+
+
+<Link to="/calander">
 <ListItemButton
   sx={{
     display: "flex",
@@ -175,6 +187,7 @@ export default function Navbar() {
     <InboxIcon />
   </ListItemIcon>
 </ListItemButton>
+</Link>
 </List>
               
             </Box>

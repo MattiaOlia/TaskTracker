@@ -6,14 +6,16 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import TaskPage from './pages/TaskPage';
 import MemberPage from './pages/MemberPage';
+import CalanderPage from './pages/CalanderPage';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/taskpage" element={<TaskPage />} />
-        <Route path="/memberpage" element={<MemberPage />}/>
+        <Route path="/tasks" element={<TaskPage />} />
+        <Route path="/members" element={<MemberPage />}/>
+        <Route path="/calander" element={<CalanderPage />} />
       </Routes>
     </Router>
   </React.StrictMode>,

@@ -55,7 +55,7 @@ function MemberPage() {
     access: obj.access,
   })));
   const isSmallScreen = useMediaQuery('(max-width:600px)');
-  const isMediumScreen = useMediaQuery('(min-width:960px)');
+  const isMediumScreen = useMediaQuery('(min-width:1200px)');
   const handleAddUser = (newUser) => {
     // Update rows state with the new user
     setRows((prevRows) => [
@@ -73,31 +73,36 @@ function MemberPage() {
     console.log(newUser);
   };
 
-  return (
+ 
+   return (
     <ThemeProvider theme={theme}>
       <React.Fragment>
         <Navbar />
         
         <CssBaseline />
         <Box ml={isSmallScreen ? 0 : 15}
-          pt={isMediumScreen ? 7 : 2}
-          mr={isMediumScreen ? 2 : 0}>
+          pt={isMediumScreen ? 7 : 2}         
+           mr={isMediumScreen ? 2 : 0}
+          display={isMediumScreen ? "flex" : "inherit"}
+          alignItems={"center"}
+          justifyContent={'space-evenly'}>
+        <Box p={2} borderRadius={"20px"} bgcolor= {theme.palette.secondary.main} margin={"auto 1em"} width={(isMediumScreen) ? "40%" : "inherit"}>
         <AddUser onAddUser={handleAddUser} />
+        </Box>
         <Box
           display="flex"
           justifyContent="center"
           flexDirection={isMediumScreen ? 'row' : 'column'}
           flexWrap={isMediumScreen ? 'nowrap' : 'wrap'}
-          
+          marginTop={"2em"}
           alignContent={"center"}
         >
           
-          <Box sx={{ height: 600, width: '90%' }}>
+          <Box sx={{ height:600, width:(isMediumScreen) ? "100%" : '90%' }}>
             <DataGrid
               rows={rows}
               columns={columns}
               pageSize={10}
-              checkboxSelection
               disableRowSelectionOnClick
             />
           </Box>
@@ -105,7 +110,9 @@ function MemberPage() {
         </Box>
       </React.Fragment>
     </ThemeProvider>
-  );
-}
+  ) 
+  }
+
+
 
 export default MemberPage;

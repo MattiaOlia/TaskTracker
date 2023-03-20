@@ -16,6 +16,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import DeleteIcon from '@mui/icons-material/Delete'
 import {Divider} from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { Hero } from '../components/Hero';
 
 function TaskPage() {
   const isSmallScreen = useMediaQuery('(max-width:600px)');
@@ -117,6 +118,7 @@ function TaskPage() {
           pt={isMediumScreen ? 7 : 2}
           mr={isMediumScreen ? 2 : 0}
         >
+          <Hero />
           <Box
             display="flex"
             flexDirection="column"
