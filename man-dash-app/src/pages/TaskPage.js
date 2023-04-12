@@ -16,7 +16,8 @@ import CheckIcon from '@mui/icons-material/Check';
 import DeleteIcon from '@mui/icons-material/Delete'
 import {Divider} from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { Hero } from '../components/Hero';
+import  Hero  from '../components/Hero';
+import Useravatar from '../components/Useravatar';
 
 function TaskPage() {
   const isSmallScreen = useMediaQuery('(max-width:600px)');
@@ -108,22 +109,31 @@ function TaskPage() {
   return (
     <ThemeProvider theme={theme}>
       <React.Fragment>
+
         <Navbar />
         <CssBaseline />
+        <Box 
+          mb= {3}
+          ml={isSmallScreen ? 0 : 15}
+          pt={isMediumScreen ? 4 : 2}
+          mr={isMediumScreen ? 2 : 0}
+          >
+            <Hero title={"Today task"} />
+          
         <Box
           display="flex"
           flexDirection={isMediumScreen ? "row" : "coloumn"}
           flexWrap={isMediumScreen ? "nowrap" : "wrap" } 
-          ml={isSmallScreen ? 0 : 15}
-          pt={isMediumScreen ? 7 : 2}
-          mr={isMediumScreen ? 2 : 0}
+          sx={{margin:"2em auto"}}
+          
         >
-          <Hero />
+          
           <Box
             display="flex"
             flexDirection="column"
             flexGrow={1}
             width={isMediumScreen ? "50%" : "100%"} 
+            
           >
             <TextField
               sx={{ margin: "2em" }}
@@ -170,6 +180,8 @@ function TaskPage() {
           >
             {isSaveClicked && [taskListMap]}
           </Box>
+        </Box>
+        
         </Box>
       </React.Fragment>
     </ThemeProvider>

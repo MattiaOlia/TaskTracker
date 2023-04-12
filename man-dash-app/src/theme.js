@@ -9,55 +9,55 @@ const theme = createTheme({
     h1: {
     
       fontWeight: 600,
-      fontSize: '2.5rem',
-      lineHeight: '3rem',
+      fontSize: '2rem',
+      lineHeight: '2.5rem',
       '@media (min-width:600px)': {
-        fontSize: '3rem',
-        lineHeight: '3.5rem',
+        fontSize: '2.2rem',
+        lineHeight: '3rem',
       },
       '@media (min-width:960px)': {
-        fontSize: '4rem',
-        lineHeight: '4.5rem',
+        fontSize: '2.5rem',
+        lineHeight: '3rem',
       },
     },
     h2: {
       margin:"0.3em 0",
       fontWeight: 600,
-      fontSize: '2rem',
+      fontSize: '1.5rem',
       lineHeight: '2rem',
       '@media (min-width:600px)': {
-        fontSize: '2rem',
-        lineHeight: '2.5rem',
+        fontSize: '1.5rem',
+        lineHeight: '2rem',
       },
       '@media (min-width:960px)': {
-        fontSize: '2rem',
-        lineHeight: '2.5rem',
+        fontSize: '1.5rem',
+        lineHeight: '2rem',
       },
     },
     h3: {
       margin:"0.3em 0",
       fontWeight: 600,
-      fontSize: '1.5rem',
-      lineHeight: '1.7rem',
+      fontSize: '1rem',
+      lineHeight: '1.5rem',
       '@media (min-width:600px)': {
-        fontSize: '1.5rem',
+        fontSize: '1.2rem',
         lineHeight: '2rem',
       },
       '@media (min-width:960px)': {
-        fontSize: '1.5rem',
+        fontSize: '1.2rem',
         lineHeight: '2rem',
       },
     },
 
     body1: {
-      fontSize: '1rem',
+      fontSize: '0.8rem',
       lineHeight: '1.5rem',
       '@media (min-width:600px)': {
         fontSize: '1rem',
         lineHeight: '1.5rem',
       },
       '@media (min-width:960px)': {
-        fontSize: '1.25rem',
+        fontSize: '1rem',
         lineHeight: '1.5rem',
       },
     },

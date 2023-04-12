@@ -11,78 +11,37 @@ import { Button, Divider, ListItem, Typography } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import image2 from "../components/img/Design community-pana 2.png"
 import BasicDateCalendar from './Calander';
+import UserAvatar from './Useravatar';
 
 
 function UserAvatarOnline() {
     const isMediumScreen=useMediaQuery("(max-width:960px)")
     const isSmallScreen=useMediaQuery("(min-width:600px")
-    const StyledBadge = styled(Badge)(({ theme }) => ({
-        '& .MuiBadge-badge': {
-          backgroundColor: '#44b700',
-          color: '#44b700',
-          boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-          '&::after': {
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            borderRadius: '50%',
-            animation: 'ripple 1.2s infinite ease-in-out',
-            border: '1px solid currentColor',
-            content: '""',
-          },
-        },
-        '@keyframes ripple': {
-          '0%': {
-            transform: 'scale(.8)',
-            opacity: 1,
-          },
-          '100%': {
-            transform: 'scale(2.4)',
-            opacity: 0,
-          },
-        },
-      }));
       
     return (
         <ThemeProvider theme={theme}>
         <React.Fragment>
             <CssBaseline />
-                <Container>
-                
+                 
                 <Box sx={{ 
   width: isMediumScreen ? 'unset' : '100%',
   maxWidth: isMediumScreen ? 'unset' : 350,
   bgcolor: `#F5F2FF`,
   borderRadius: '20px',
   position: isMediumScreen ? 'relative' : 'fixed',
-  top: isMediumScreen ? 'unset' : 10,
+  top: isMediumScreen ? 2 : 10,
   bottom: isMediumScreen ? 'unset' : 10,
   right: isMediumScreen ? 'unset' : 10,
-  marginLeft: isMediumScreen ? 13 : 'unset',
   display: isMediumScreen ? 'flex' : '',
   flexDirection: isMediumScreen ? 'column' : '',
   alignItems: isMediumScreen ? 'center' : '',
-  mt: isMediumScreen ? 3 : '',
-  marginLeft: isSmallScreen ? 13 : 0
+  mt: isSmallScreen ? 0: 4,
+  marginLeft: isSmallScreen ? 16 : 0,
+  marginRight: isMediumScreen ? 3 : 0
 }}>
                  
-                  <Box width={"100%"} sx={{display:"flex",flexAlign:"center", justifyContent:"center",alignItems:"center"}}  >
-                    <Box  sx={{width:"fit-content", padding:"1em"}}  >
-                    <StyledBadge 
-                        overlap="circular"
-                        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                        variant="dot">
-                            <Avatar sx={{ width: 60, height: 60 }} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                    </StyledBadge>
-                    </Box>
-                    <Box sx={{display:"flex", flexDirection:"column", flexAlign:"center", justifyContent:"center",alignItems:"center"}}>
-                    <h3 style={{margin:0}}>Mattia Olia</h3>
-                    <p style={{margin:0}}>Front End</p>
-                    </Box>
-                    </Box>
-                    <Divider  sx={{width:"80%", border:"solid 1px grey", margin:"0 1em"}} />
+                  <UserAvatar />
+                    <Divider  sx={{width:"80%", border:"solid 1px grey", margin:"0 auto"}} />
                     <Box sx={{
                         display: 'flex',
                         flexDirection: 'column', 
@@ -104,7 +63,7 @@ function UserAvatarOnline() {
                       </Box>  }
                   </Box>
                   
-              </Container>
+             
         </React.Fragment>
         </ThemeProvider>
     )

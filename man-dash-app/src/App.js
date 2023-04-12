@@ -1,5 +1,5 @@
 import {  ThemeProvider } from '@mui/material/styles';
-import {  Typography } from '@mui/material';
+import {  Container, Typography } from '@mui/material';
 import theme from "./theme"
 import Navbar from './components/Navbar';
 import TodayTask from "./components/TodayTask"
@@ -20,14 +20,18 @@ function App() {
     
       <div className="App">
         <ThemeProvider theme={theme}>
+        <Box sx={{backgroundColor: theme.palette.backgroundCol }}>
           <Navbar />
+          <Container sx={{paddingBottom:"2em" }}>
           <UserAvatarOnline />
-          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column'}}>
             <Box mt={2} sx={{ flex: '1 0 auto' }} />
             <TodayTask sx={{ flex: '0 1 auto' }} />
           </Box>
           <WidgetsComp />
           <Chart />
+          </Container>
+          </Box>
         </ThemeProvider>
        
       </div>
@@ -43,7 +47,7 @@ function App() {
           <div className="App">
             <Navbar />
             <UserAvatarOnline />
-            <Box ml={13} pt={(isMediumScreen) ? 7 : 2} mr={(isMediumScreen) ? 45 : 0} >
+            <Box ml={13} pt={(isMediumScreen) ? 7 : 2} mr={(isMediumScreen) ? 45 : 0} pb={8} >
               <TodayTask  /> 
               <WidgetsComp />
               <Chart />

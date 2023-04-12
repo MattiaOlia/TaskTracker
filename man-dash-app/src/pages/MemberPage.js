@@ -8,6 +8,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { mockDataTeam } from '../mockData';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import AddUser from '../components/AddUser';
+import Hero from "../components/Hero"
 
 const columns = [
  
@@ -57,7 +58,7 @@ function MemberPage() {
   const isSmallScreen = useMediaQuery('(max-width:600px)');
   const isMediumScreen = useMediaQuery('(min-width:1200px)');
   const handleAddUser = (newUser) => {
-    // Update rows state with the new user
+    
     setRows((prevRows) => [
       ...prevRows,
       {
@@ -69,7 +70,7 @@ function MemberPage() {
         access: newUser.access,
       },
     ]);
-    // Do something else with the new user data
+    
     console.log(newUser);
   };
 
@@ -80,13 +81,18 @@ function MemberPage() {
         <Navbar />
         
         <CssBaseline />
-        <Box ml={isSmallScreen ? 0 : 15}
-          pt={isMediumScreen ? 7 : 2}         
-           mr={isMediumScreen ? 2 : 0}
+        <Box 
+          mb={3}
+          ml={isSmallScreen ? 0 : 15}
+          pt={isMediumScreen ? 4 : 2}         
+           mr={isMediumScreen ? 2 : 0}>
+          <Hero title="Users" />
+        <Box 
           display={isMediumScreen ? "flex" : "inherit"}
           alignItems={"center"}
           justifyContent={'space-evenly'}>
-        <Box p={2} borderRadius={"20px"} bgcolor= {theme.palette.secondary.main} margin={"auto 1em"} width={(isMediumScreen) ? "40%" : "inherit"}>
+        
+        <Box p={2} borderRadius={"20px"} bgcolor= {theme.palette.secondary.main} margin={"2em 1em"} width={(isMediumScreen) ? "40%" : "inherit"}>
         <AddUser onAddUser={handleAddUser} />
         </Box>
         <Box
@@ -105,6 +111,7 @@ function MemberPage() {
               pageSize={10}
               disableRowSelectionOnClick
             />
+            </Box>
           </Box>
         </Box>
         </Box>

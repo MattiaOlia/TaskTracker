@@ -19,6 +19,7 @@ import {  ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import AddTaskIcon from '@mui/icons-material/AddTask';
 import PeopleIcon from '@mui/icons-material/People';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 
 export default function Navbar() {
  
@@ -96,8 +97,37 @@ export default function Navbar() {
         return (
           <div>
           <ThemeProvider theme={theme}>
-            <Box sx={{ width: '100%', maxWidth: 100, bgcolor: `${theme.palette.secondary.main}`,borderRadius:"20px", position:"fixed", top:10,bottom:10,left:10 }}>
-            <List sx={{ bgcolor: `${theme.palette.secondary.main}` }} disablePadding>
+            <Box sx={{ width: '100%', maxWidth: 100, bgcolor: `${theme.palette.secondary.main}`,borderRadius:"20px", position:"fixed", top:10,bottom:10,left:10, display:"flex", justifyContent:"center" }}>
+            <List sx={{ bgcolor: `${theme.palette.secondary.main}`, display:"flex", flexDirection:"column", justifyContent:"space-evenly" }}  disablePadding>
+             
+            <Link to="/">
+            <ListItemButton
+  sx={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    margin:"2em auto",
+    width: "4em",
+    height: "4em",
+    borderRadius: "50%",
+    ':hover': { bgcolor: `${theme.palette.primary.main}` }
+  }}
+>
+  <ListItemIcon
+    sx={{
+      color: 'black',
+      width: '2.5em',
+      height: '5em',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+     ':hover': { color:`${theme.palette.primary.contrastText}` }
+    }}
+  >
+   <DashboardIcon />
+  </ListItemIcon>
+</ListItemButton>
+</Link>
 
 
             <Link to="/tasks">
@@ -117,7 +147,7 @@ export default function Navbar() {
     sx={{
       color: 'black',
       width: '2.5em',
-      height: '2.5em',
+      height: '5em',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',

@@ -134,7 +134,8 @@ function AddUser({ onAddUser }) {
           display: "flex",
           flexWrap : "wrap",
           padding: "2em",
-          gap:"1em"
+          gap:"1em",
+          flexDirection: (isMediumScreen) ? "column" : "row"
       }}>
          <TextField
           label="Name"

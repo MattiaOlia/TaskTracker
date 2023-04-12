@@ -12,10 +12,12 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
+        
         <Route path="/" element={<App />} />
         <Route path="/tasks" element={<TaskPage />} />
         <Route path="/members" element={<MemberPage />}/>
         <Route path="/calander" element={<CalanderPage />} />
+        
       </Routes>
     </Router>
   </React.StrictMode>,
@@ -23,3 +25,4 @@ ReactDOM.render(
 );
 
 reportWebVitals(); 
+
