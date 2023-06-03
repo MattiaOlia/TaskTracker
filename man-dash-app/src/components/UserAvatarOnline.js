@@ -1,17 +1,13 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
-import Badge from '@mui/material/Badge';
-import Avatar from '@mui/material/Avatar';
 import theme from '../theme';
 import { ThemeProvider } from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import { Button, Divider, ListItem, Typography } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import image2 from "../components/img/Design community-pana 2.png"
 import BasicDateCalendar from './Calander';
 import UserAvatar from './Useravatar';
+import { Link } from 'react-router-dom';
 
 
 function UserAvatarOnline() {
@@ -52,9 +48,9 @@ function UserAvatarOnline() {
                       }}>
                       
                       <Box >
-                      <Typography variant={'h3'}>We are design agency work with you</Typography>
-                      <Typography variant={"body1"}>Bringing well crafted design and scalable infrastructure</Typography>
-                      <Button  sx={{marginTop:"0.7em"}}  variant='contained'>Hire us</Button>
+                      <Typography variant={'h3'}>Organize your work!</Typography>
+                      <Typography variant={"body1"}>If you're planning your work or appointments, our calendar will help you effectively manage your time.</Typography>
+                      <Link to="/members"><Button  sx={{marginTop:"0.7em"}}  variant='contained'>PLAN YOUR ACTIVITY</Button></Link>
                       </Box>
                     </Box>
                     {!isMediumScreen &&

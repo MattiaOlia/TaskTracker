@@ -86,13 +86,16 @@ function MemberPage() {
           ml={isSmallScreen ? 0 : 15}
           pt={isMediumScreen ? 4 : 2}         
            mr={isMediumScreen ? 2 : 0}>
-          <Hero title="Users" />
+          <Hero title="Users" 
+                desc="Expand your team! You can easily add new members to your task management system from a pre-existing list. Seamlessly assign tasks to team members and collaborate effectively on projects." 
+                />
         <Box 
           display={isMediumScreen ? "flex" : "inherit"}
           alignItems={"center"}
-          justifyContent={'space-evenly'}>
+          justifyContent={'space-evenly'}
+          margin={"0 1em"}>
         
-        <Box p={2} borderRadius={"20px"} bgcolor= {theme.palette.secondary.main} margin={"2em 1em"} width={(isMediumScreen) ? "40%" : "inherit"}>
+        <Box p={"1em 3em"} borderRadius={"20px"} bgcolor= {theme.palette.secondary.main} margin={"2em 1em"} width={(isMediumScreen) ? "40%" : "inherit"}>
         <AddUser onAddUser={handleAddUser} />
         </Box>
         <Box
@@ -100,11 +103,11 @@ function MemberPage() {
           justifyContent="center"
           flexDirection={isMediumScreen ? 'row' : 'column'}
           flexWrap={isMediumScreen ? 'nowrap' : 'wrap'}
-          marginTop={"2em"}
+          
           alignContent={"center"}
         >
           
-          <Box sx={{ height:600, width:(isMediumScreen) ? "100%" : '90%' }}>
+          <Box sx={{ height:400, width:(isMediumScreen) ? "90%" : '80%' }}>
             <DataGrid
               rows={rows}
               columns={columns}

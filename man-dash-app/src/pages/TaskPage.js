@@ -27,6 +27,7 @@ function TaskPage() {
   const [isSaveClicked, setIsSavedClicked] = React.useState(false);
   const [taskList, setTaskList] = React.useState([]);
   const [selectedObj, setSelectedObj] = React.useState(true);
+  const [isEmpty, setIsEmpty]= React.useState(true)
 
   const handleTextFieldChange = (event) => {
     setTextFieldValue(event.target.value);
@@ -43,12 +44,14 @@ function TaskPage() {
     setTaskList([...taskList, newTask]);
     setTextFieldValue("");
     setTextAreaValue("");
+    setIsEmpty(false)
   };
 
   const handleCancel = () => {
     setTextFieldValue("");
     setTextAreaValue("");
   }
+
 
   const handleCheck = (index) => {
     setSelectedObj(()=> !selectedObj)
@@ -118,13 +121,14 @@ function TaskPage() {
           pt={isMediumScreen ? 4 : 2}
           mr={isMediumScreen ? 2 : 0}
           >
-            <Hero title={"Today task"} />
+            <Hero title={"Today task"}
+                   desc={"Stay organized with your daily tasks.  Manage your daily to-do list efficiently. Prioritize your responsibilities and make progress towards your goals every day."} />
           
         <Box
           display="flex"
           flexDirection={isMediumScreen ? "row" : "coloumn"}
           flexWrap={isMediumScreen ? "nowrap" : "wrap" } 
-          sx={{margin:"2em auto"}}
+          sx={{margin: isMediumScreen ? "0.5em 5em" : "0.5em auto"}}
           
         >
           
@@ -133,6 +137,7 @@ function TaskPage() {
             flexDirection="column"
             flexGrow={1}
             width={isMediumScreen ? "50%" : "100%"} 
+            padding={5}
             
           >
             <TextField
@@ -169,15 +174,17 @@ function TaskPage() {
           </Box>
           <Box
             p={4}
-            m={2}
+            m={8}
             sx={{
-              mt: isMediumScreen ? "0" : "2em",
+              mt: isMediumScreen ? "2em": "1em",
               borderRadius: "20px",
               bgcolor: `${theme.palette.secondary.main}`,
               flexGrow: 1,
               width: isMediumScreen ? "50%" : "inherit", 
             }}
-          >
+          > {isEmpty && <p>Hi! Look like you have no tasks at the moment, but don't worry, there's plenty of time! Get ready and start adding your tasks here to stay organized. Let's make today a productive one!
+
+          </p>}
             {isSaveClicked && [taskListMap]}
           </Box>
         </Box>

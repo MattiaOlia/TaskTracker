@@ -19,9 +19,9 @@ export default function Hero(props) {
             <CssBaseline>
                 <Container  maxWidth={"none"} >
                      <Box p={4} sx={{ borderRadius:"20px", bgcolor: `${theme.palette.secondary.main}`, display:"flex", justifyContent:" space-between"}}>
-                     <Box sx={{display:"inline-block"}}>
+                     <Box sx={{display:"inline-block" ,width:"50%"}}>
                      <Typography variant='h2'>{props.title}</Typography>
-                     <Typography variant='body1'>Check your daily tasks and schedules</Typography>
+                     <Typography variant='body1'>{props.desc}</Typography>
                      </Box>
                      {(isLargeScreen) && <Box sx={{marginRight:"2em"}}> <UserAvatar />
                      </Box>}

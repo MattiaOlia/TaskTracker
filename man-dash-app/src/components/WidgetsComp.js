@@ -21,13 +21,19 @@ function WidgetsComp() {
                         {(isLargeScreen) ? 
                         <Grid container spacing={2}>
                          <Grid item xs={4}>
-                            <Widget />
+                            <Widget check={"Users"} 
+                                     num={"9"}
+                                     value={90}/>
                             </Grid>
                             <Grid item xs={4}>
-                            <Widget />
+                            <Widget check={"Today's Tasks"} 
+                                     num={"2"}
+                                     value={10} />
                             </Grid>
                             <Grid item xs={4}>
-                            <Widget />
+                            <Widget check={"Monthly Tasks"} 
+                                     num={"8"}
+                                     value={20} />
                             </Grid>
                          </Grid> : 
                          <Box>

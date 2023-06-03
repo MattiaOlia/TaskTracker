@@ -11,7 +11,7 @@ import { ThemeProvider } from '@emotion/react';
 import theme from '../theme';
 
 
-function Widget() {
+function Widget(props) {
   
   const isLargeScreen=useMediaQuery("(min-width:1200px)")
 
@@ -27,17 +27,16 @@ function Widget() {
     >
         <CardContent>
           <Typography variant={"body1"} color="text.secondary">
-            Users
+            {props.check}
           </Typography>
           <Typography variant="h2" component="div">
-            150
+            {props.num}
           </Typography>
-          <LinearProgress sx={{width:"60%",height:"10px",borderRadius:"20px"}} variant="determinate" value={50} />
+          <LinearProgress sx={{width:"60%",height:"10px",borderRadius:"20px"}} variant="determinate" value={props.value} />
           <Typography variant={"body1"} color="text.secondary" gutterBottom>
             Progress
           </Typography>
           <CardActions>
-          <Button size="small" variant='contained'>Learn More</Button>
         </CardActions>
         </CardContent>
       </Card>

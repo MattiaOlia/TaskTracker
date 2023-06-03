@@ -10,8 +10,8 @@ export default function BasicDateCalendar() {
       <Box sx={{
         width: "100%",
         height: "100%",
-        minWidth: "300px", // Imposta la larghezza minima
-        minHeight: "200px", // Imposta l'altezza minima
+        minWidth: "300px", 
+        minHeight: "200px", 
       }}>
         <DateCalendar sx={{width:"100%", height:"100%"}} />
       </Box>

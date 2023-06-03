@@ -60,7 +60,8 @@ function MyCalendar() {
             ml={isSmallScreen ? 0 : 15}
             pt={isMediumScreen ? 4 : 2}
             mr={isMediumScreen ? 2 : 0}>
-              <Hero title="Calander" />
+              <Hero title="Calander"
+                    desc="Take control of your daily schedule. You can add and manage your programs, appointments, and events with ease. Navigate through your schedule and stay on top of your daily agenda." />
           <Box
             display={isMediumScreen ? "flex" : "inherit"}
             alignItems={"flexStar"}

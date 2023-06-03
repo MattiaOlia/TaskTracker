@@ -52,7 +52,7 @@ function UserAvatar() {
           >
             <Avatar
               sx={{ width: 60, height: 60 }}
-              alt="Mattia Olia"
+              alt="Oliver Smith"
               src="/static/images/avatar/1.jpg"
             />
           </StyledBadge>
@@ -65,8 +65,8 @@ function UserAvatar() {
             justifyContent: 'center',
           }}
         >
-          <h3 style={{ margin: 0 }}>Mattia Olia</h3>
-          <p style={{ margin: 0 }}>Front End</p>
+          <h3 style={{ margin: 0 }}>Oliver Smith</h3>
+          <p style={{ margin: 0 }}>Product Manager (PM)</p>
         </Box>
       </Box>
     </div>

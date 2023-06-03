@@ -133,7 +133,7 @@ function AddUser({ onAddUser }) {
           justifyContent:"center",
           display: "flex",
           flexWrap : "wrap",
-          padding: "2em",
+          padding: "0.5em 3em",
           gap:"1em",
           flexDirection: (isMediumScreen) ? "column" : "row"
       }}>

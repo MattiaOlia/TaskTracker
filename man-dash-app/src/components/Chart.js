@@ -1,7 +1,7 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { Box } from '@mui/system';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, Typography } from '@mui/material';
 import Container from '@mui/material/Container';
 import theme from '../theme';
 import { ThemeProvider } from '@emotion/react';
@@ -29,6 +29,7 @@ function Chart() {
         <CssBaseline />
             <Container>
                 <Box sx={{ padding:"1.5em",borderRadius:"20px", bgcolor: `${theme.palette.secondary.main}`}}>
+                <Typography variant='h2'>Weekly Task</Typography>
                   <ResponsiveContainer width="100%" height={130}>
                     <LineChart data={data}>
                     <XAxis dataKey="day" tick={<CustomizedAxisTick />} />
