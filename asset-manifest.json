@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/managementDashboard/static/css/main.f88dca49.css",
+    "main.js": "/managementDashboard/static/js/main.1c24af44.js",
+    "static/js/787.13e8e632.chunk.js": "/managementDashboard/static/js/787.13e8e632.chunk.js",
+    "static/media/Time management-amico 1.png": "/managementDashboard/static/media/Time management-amico 1.82ff86deda8b50cada7d.png",
+    "index.html": "/managementDashboard/index.html",
+    "main.f88dca49.css.map": "/managementDashboard/static/css/main.f88dca49.css.map",
+    "main.1c24af44.js.map": "/managementDashboard/static/js/main.1c24af44.js.map",
+    "787.13e8e632.chunk.js.map": "/managementDashboard/static/js/787.13e8e632.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f88dca49.css",
+    "static/js/main.1c24af44.js"
+  ]
+}
