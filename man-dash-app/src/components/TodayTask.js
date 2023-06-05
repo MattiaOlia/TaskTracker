@@ -20,7 +20,7 @@ export default function TodayTask() {
                 <Container>
                      <Box p={4} sx={{ borderRadius:"20px", bgcolor: `${theme.palette.secondary.main}`, display:"flex"}}>
                      <Box sx={{display:"inline-block"}}>
-                     <Typography variant='h2'>Today's Task</Typography>
+                     <Typography variant='h2'>Today'ss Task</Typography>
                      <Typography variant='body1'>Check your daily task.</Typography>
                      <Link to="/tasks"> <Button sx={{marginTop:"1.5em"}} variant="contained">Today’s schedule</Button></Link></Box>
                      {(isLargeScreen) && <Box sx={{margin:"-5em auto", display: 'inline-block', justifyContent: 'center', alignItems: 'center' }}>
