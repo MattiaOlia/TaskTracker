@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/managementDashboard/static/css/main.f88dca49.css",
-    "main.js": "/managementDashboard/static/js/main.1e7e8a4c.js",
-    "static/js/787.13e8e632.chunk.js": "/managementDashboard/static/js/787.13e8e632.chunk.js",
-    "static/media/Time management-amico 1.png": "/managementDashboard/static/media/Time management-amico 1.82ff86deda8b50cada7d.png",
-    "index.html": "/managementDashboard/index.html",
-    "main.f88dca49.css.map": "/managementDashboard/static/css/main.f88dca49.css.map",
-    "main.1e7e8a4c.js.map": "/managementDashboard/static/js/main.1e7e8a4c.js.map",
-    "787.13e8e632.chunk.js.map": "/managementDashboard/static/js/787.13e8e632.chunk.js.map"
+    "main.css": "/static/css/main.f88dca49.css",
+    "main.js": "/static/js/main.c3bb0004.js",
+    "static/js/787.13e8e632.chunk.js": "/static/js/787.13e8e632.chunk.js",
+    "static/media/Time management-amico 1.png": "/static/media/Time management-amico 1.82ff86deda8b50cada7d.png",
+    "index.html": "/index.html",
+    "main.f88dca49.css.map": "/static/css/main.f88dca49.css.map",
+    "main.c3bb0004.js.map": "/static/js/main.c3bb0004.js.map",
+    "787.13e8e632.chunk.js.map": "/static/js/787.13e8e632.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f88dca49.css",
-    "static/js/main.1e7e8a4c.js"
+    "static/js/main.c3bb0004.js"
   ]
 }
