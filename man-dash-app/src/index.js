@@ -13,7 +13,7 @@ ReactDOM.render(
     <Router>
       <Routes>
         
-        <Route path="/" element={<App />} />
+        <Route path="/TaskTracker" element={<App />} />
         <Route path="/tasks" element={<TaskPage />} />
         <Route path="/members" element={<MemberPage />}/>
         <Route path="/calander" element={<CalanderPage />} />
