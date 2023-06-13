@@ -18,7 +18,7 @@ function WidgetsComp() {
             <CssBaseline />
                <Container>
                     <Box >
-                        {(isLargeScreen) ? 
+                       {isLargeScreen ? 
                         <Grid container spacing={2}>
                          <Grid item xs={4}>
                             <Widget check={"Users"} 
@@ -37,9 +37,15 @@ function WidgetsComp() {
                             </Grid>
                          </Grid> : 
                          <Box>
-                         <Widget />
-                         <Widget /><Widget /></Box>
-                         }
+                         <Widget check={"Users"} 
+                                     num={"9"}
+                                     value={90} />
+                         <Widget check={"Today's Tasks"} 
+                                     num={"2"}
+                                     value={10}/><Widget  check={"Monthly Tasks"} 
+                                     num={"8"}
+                                     value={20}  /></Box>}
+                         
                        
                         
 </Box>

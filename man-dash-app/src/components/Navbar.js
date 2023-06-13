@@ -84,8 +84,8 @@ export default function Navbar() {
             </Menu>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            LOGO
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}> <Link style={{color:"white", textDecoration:"none",}} to="/tasktracker">
+            TASK TRACKER </Link>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -100,7 +100,7 @@ export default function Navbar() {
             <Box sx={{ width: '100%', maxWidth: 100, bgcolor: `${theme.palette.secondary.main}`,borderRadius:"20px", position:"fixed", top:10,bottom:10,left:10, display:"flex", justifyContent:"center" }}>
             <List sx={{ bgcolor: `${theme.palette.secondary.main}`, display:"flex", flexDirection:"column", justifyContent:"space-evenly" }}  disablePadding>
              
-            <Link to="/">
+            <Link to="/tasktracker">
             <ListItemButton
   sx={{
     display: "flex",

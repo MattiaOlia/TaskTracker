@@ -44,7 +44,7 @@ function MyCalendar() {
 
   if (eventsM.length === 0) {
     eventsM.push(
-      <p key="none">There is no event in program for this date</p>
+      <p key="none"> No tasks scheduled for this date. Take this opportunity to plan new activities and make the most of your time!</p>
     );
   }
 
